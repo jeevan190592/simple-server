@@ -30,7 +30,7 @@ try{
 
 if(stats.isFile()){
   var mimeType = mimeTypes[path.extname(fileName).split(".").reverse()[0]];
-  res.wwriteHead(200, {'content-type': mimeType});
+  res.writeHead(200, {'content-type': mimeType});
 
   var fileStream = fs.createReadStream(fileName);
   fileStream.pipe(res);
